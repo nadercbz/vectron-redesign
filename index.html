@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vectron Kassensysteme</title>
+<meta name="description" content="Eine Kasse, alle Möglichkeiten. Kassensysteme, Payment, Cloud-Dienste und Service vor Ort von Vectron.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=20261015140307">
+</head>
+<body>
+<div class="loader" id="loader"><img src="assets/logo.svg" alt=""><div class="ld-bar"><i id="ldBar"></i></div><span class="mono" id="ldNum">0 %</span></div>
+<div class="progress" id="progress"></div>
+
+<!-- ============ HEADER ============ -->
+<div class="utility">
+  <div class="wrap">
+    <span class="u-left"><a href="tel:+492512856200">+49 251 2856 200</a></span>
+    <span class="u-right">
+      <a href="https://vectronhelp.zendesk.com/hc/de">Service & Support</a>
+      <a href="https://karriere.vectron-systems.com/de/">Karriere</a>
+      <a href="https://service.vectron.de/index.php">Händler-Login</a>
+      <a href="https://www.vectron.de/de/kunden-login/login-uebersicht/">Kunden-Login</a>
+      <span class="lang">DE · EN · NL</span>
+    </span>
+  </div>
+</div>
+
+<header class="site-header" id="header">
+  <div class="wrap hdr">
+    <a href="#" class="brand"><img src="assets/logo-green.svg" alt="Vectron by Shift4"></a>
+    <nav class="main-nav" aria-label="Hauptnavigation">
+      <button class="nav-item" data-menu="produkte">Produkte</button>
+      <button class="nav-item" data-menu="branchen">Branchen</button>
+      <button class="nav-item" data-menu="preise">Preise</button>
+      <button class="nav-item" data-menu="wissen">Wissen</button>
+      <button class="nav-item" data-menu="unternehmen">Unternehmen</button>
+      <button class="nav-item" data-menu="kontakt">Kontakt</button>
+    </nav>
+    <div class="hdr-right">
+      <button class="icon-btn" aria-label="Suche"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <a href="seiten/dein-angebot.html" class="btn btn-primary btn-sm magnetic">Angebot anfordern</a>
+      <button class="burger" id="burger" aria-label="Menü öffnen"><span></span><span></span></button>
+    </div>
+  </div>
+
+  <!-- MEGA MENUS -->
+  <div class="mega" id="mega">
+    <div class="mega-panel" data-panel="produkte">
+      <div class="wrap mega-grid cols-5">
+        <div><p class="mega-h">Payment</p>
+          <a href="seiten/smart.html">VECTRON SMART <em class="tag">Top</em></a>
+          <a href="seiten/shift4-one-pos-terminal.html">Shift4 One <em class="tag new">Neu</em></a>
+          <a href="seiten/kartenterminals.html">Kartenterminals <em class="tag new">Neu</em></a>
+        </div>
+        <div><p class="mega-h">Kassen</p>
+          <a href="seiten/kassensysteme.html">Kassensysteme</a>
+          <a href="seiten/pos-8.html">POS 8 <em class="tag new">Neu</em></a>
+          <a href="seiten/kuechenmonitor.html">Küchenmonitor</a>
+          <a href="seiten/zubehoer.html">Zubehör</a>
+          <a href="seiten/software.html">Software</a>
+        </div>
+        <div><p class="mega-h">Cloud-Dienste</p>
+          <a href="seiten/kasse.html">Kasse</a><a href="seiten/sicherheit.html">Sicherheit</a><a href="seiten/kundenbindung.html">Kundenbindung</a>
+          <a href="seiten/ordering.html">Ordering</a><a href="seiten/myvectron-tischreservierung.html">Reservierung</a><a href="seiten/reporting-app.html">Reporting <em class="tag new">Neu</em></a>
+        </div>
+        <div><p class="mega-h">Schnittstellen</p>
+          <a href="seiten/hardware-schnittstellen.html">Hardware-Schnittstellen</a><a href="seiten/software-schnittstellen.html">Software-Schnittstellen</a>
+          <a href="seiten/myvectron-schnittstellen.html">myVectron-Schnittstellen</a><a href="seiten/myvectron-anbindung-datev-kassenarchiv-online.html">Anbindung DATEV Kassenarchiv online</a>
+          <p class="mega-h" style="margin-top:22px">Finanzierung</p>
+          <a href="seiten/unternehmensfinanzierung.html">Unternehmensfinanzierung <em class="tag new">Neu</em></a>
+        </div>
+        <a class="mega-feature" href="seiten/pos-8.html">
+          <img src="assets/img/hero-pos.jpg" alt="">
+          <span class="mono">Neu</span><strong>Kassensystem POS 8</strong><span>Deine Evolution am Point of Sale</span>
+        </a>
+      </div>
+    </div>
+    <div class="mega-panel" data-panel="branchen">
+      <div class="wrap mega-grid cols-branchen">
+        <a class="mega-img" href="seiten/gastronomie.html" data-tab="0"><img src="assets/img/handheld.jpg" alt=""><span>Gastronomie</span></a>
+        <a class="mega-img" href="seiten/baeckerei-konditorei.html" data-tab="1"><img src="assets/img/bakery.jpg" alt=""><span>Bäckerei & Konditorei</span></a>
+        <a class="mega-img" href="seiten/metzgerei.html" data-tab="2"><img src="assets/img/butcher.jpg" alt=""><span>Metzgerei</span></a>
+        <a class="mega-img" href="seiten/hotellerie.html" data-tab="3"><img src="assets/img/hotel.jpg" alt=""><span>Hotellerie</span></a>
+        <a class="mega-img" href="seiten/aussengastronomie.html" data-tab="4"><img src="assets/img/terrace.jpg" alt=""><span>Außengastronomie</span></a>
+        <a class="mega-img" href="seiten/einzelhandel.html" data-tab="5"><img src="assets/img/retail.jpg" alt=""><span>Einzelhandel</span></a>
+        <a class="mega-img" href="seiten/friseure.html" data-tab="6"><img src="assets/img/salon.jpg" alt=""><span>Friseure</span></a>
+        <div class="mega-more"><p class="mega-h">Mehr</p><a href="seiten/branchennews.html">Branchennews</a><a href="seiten/erfolgsgeschichten.html">Erfolgsstories</a></div>
+      </div>
+    </div>
+    <div class="mega-panel" data-panel="preise">
+      <div class="wrap mega-grid cols-3">
+        <div><p class="mega-h">Preise</p><a href="seiten/preisliste.html">Hardware & Software</a><a href="seiten/digitalpaket.html">Cloud-Dienste</a><a href="seiten/kartenterminals.html">Payment-Konditionen</a></div>
+        <div><p class="mega-h">Pakete</p><a href="seiten/smart.html">VECTRON SMART Komplettpaket</a><a href="seiten/unternehmensfinanzierung.html">Unternehmensfinanzierung</a><a href="seiten/kaufberatung.html">Kaufberatung</a></div>
+        <div class="mega-price"><span class="mono">ab</span><strong>24,90 €</strong><span>pro Monat für deine Kasse. Cloud-Dienste für 0 €.</span><a href="seiten/preisliste.html" class="btn btn-dark btn-sm">Alle Preise</a></div>
+      </div>
+    </div>
+    <div class="mega-panel" data-panel="wissen">
+      <div class="wrap mega-grid cols-4">
+        <div><p class="mega-h">Service</p><a href="https://vectronhelp.zendesk.com/hc/de">Service & Support</a><a href="https://vectronhelp.zendesk.com/hc/de/categories/15596215904925-Technische-Dokumente">Technische Dokumente</a><a href="seiten/digitalportal.html">Werbemittel (Digitalportal)</a><a href="seiten/newsletter.html">Newsletter</a></div>
+        <div><p class="mega-h">Termine</p><a href="seiten/messen-events.html">Messen & Events</a><a href="seiten/webinare.html">Webinare</a><a href="seiten/blog.html">Blog</a></div>
+        <div><p class="mega-h">Wissenswertes</p><a href="seiten/lexikon.html">Lexikon</a><a href="seiten/fiskalische-vorgaben.html">Fiskalische Vorgaben</a><a href="seiten/e-rechnungspflicht.html">E-Rechnungspflicht</a><a href="seiten/kassenmeldepflicht-2025.html">Meldepflicht</a></div>
+        <div><p class="mega-h">Gesetze</p><a href="seiten/tse.html">TSE</a><a href="seiten/kassen-sich-v-2020.html">KassensichV</a><a href="seiten/gobd.html">GoBD</a></div>
+      </div>
+    </div>
+    <div class="mega-panel" data-panel="unternehmen">
+      <div class="wrap mega-grid cols-4">
+        <div><p class="mega-h">Unternehmensprofil</p><a href="seiten/unternehmen.html">Unternehmen</a><a href="seiten/vorstand.html">Vorstand</a><a href="seiten/vectron-im-rueckblick.html">Vectron im Rückblick</a><a href="seiten/verschmelzung-posmatic.html">Verschmelzung Posmatic GmbH</a><a href="seiten/nachhaltigkeit.html">Nachhaltigkeit</a><a href="seiten/erfolgsgeschichten.html">Erfolgsstories</a></div>
+        <div><p class="mega-h">Investor Relations</p><a href="seiten/ir-kontakt.html">IR-Kontakt</a><a href="seiten/uebernahmeangebot.html">Übernahmeangebot</a><a href="seiten/ad-hoc-news.html">Ad-hoc-News</a><a href="seiten/investoren-news.html">Investoren-News</a><a href="seiten/kurzportraet-unternehmen.html">Kurzporträt Unternehmen</a><a href="seiten/unternehmenskalender-berichte.html">Unternehmenskalender & Berichte</a><a href="seiten/analysen.html">Analysen</a><a href="seiten/directors-dealings.html">Directors' Dealings</a><a href="seiten/corporate-governance-kodex.html">Corporate Governance Kodex</a><a href="seiten/aktienkurs.html">Aktienkurs</a></div>
+        <div><p class="mega-h">News & Presse</p><a href="seiten/pressekontakt.html">Pressekontakt</a><a href="seiten/media-datenbank.html">Media-Datenbank</a><a href="seiten/news.html">Alle News</a><a href="seiten/rss-feeds.html">RSS-Feeds</a></div>
+        <div><p class="mega-h">Karriere</p><a href="https://karriere.vectron-systems.com/de/">Stellenangebote</a><a href="https://karriere.vectron-systems.com/de/unternehmen/benefits/">Benefits</a></div>
+      </div>
+    </div>
+    <div class="mega-panel" data-panel="kontakt">
+      <div class="wrap mega-grid cols-3">
+        <div><p class="mega-h">Kaufen</p><a href="seiten/kaufberatung.html">Kaufberatung</a><a href="seiten/dein-angebot.html">Angebotsanfrage</a><a href="seiten/vectron-haendlersuche.html">Händlersuche</a></div>
+        <div><p class="mega-h">Support</p><a href="https://vectronhelp.zendesk.com/hc/de">Kundensupport</a><a href="seiten/vertriebsteam.html">Support für Händler</a><a href="seiten/pressekontakt.html">Pressekontakt</a></div>
+        <div class="mega-price"><span class="mono">Mo. bis Fr. 9 bis 17 Uhr</span><strong style="font-size:30px">+49 251 2856 200</strong><span>Vectron Systems AG, Willy-Brandt-Weg 41, 48155 Münster</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mm-inner">
+    <details><summary>Produkte</summary><div>
+      <p class="mega-h">Payment</p><a href="seiten/smart.html">VECTRON SMART</a><a href="seiten/shift4-one-pos-terminal.html">Shift4 One</a><a href="seiten/kartenterminals.html">Kartenterminals</a>
+      <p class="mega-h">Kassen</p><a href="seiten/kassensysteme.html">Kassensysteme</a><a href="seiten/pos-8.html">POS 8</a><a href="seiten/kuechenmonitor.html">Küchenmonitor</a><a href="seiten/zubehoer.html">Zubehör</a><a href="seiten/software.html">Software</a>
+      <p class="mega-h">Cloud-Dienste</p><a href="seiten/kasse.html">Kasse</a><a href="seiten/sicherheit.html">Sicherheit</a><a href="seiten/kundenbindung.html">Kundenbindung</a><a href="seiten/ordering.html">Ordering</a><a href="seiten/myvectron-tischreservierung.html">Reservierung</a><a href="seiten/reporting-app.html">Reporting</a>
+      <p class="mega-h">Schnittstellen</p><a href="seiten/hardware-schnittstellen.html">Hardware-Schnittstellen</a><a href="seiten/software-schnittstellen.html">Software-Schnittstellen</a><a href="seiten/myvectron-schnittstellen.html">myVectron-Schnittstellen</a><a href="seiten/myvectron-anbindung-datev-kassenarchiv-online.html">Anbindung DATEV Kassenarchiv online</a><a href="seiten/unternehmensfinanzierung.html">Unternehmensfinanzierung</a>
+    </div></details>
+    <details><summary>Branchen</summary><div><a href="seiten/gastronomie.html">Gastronomie</a><a href="seiten/baeckerei-konditorei.html">Bäckerei & Konditorei</a><a href="seiten/metzgerei.html">Metzgerei</a><a href="seiten/hotellerie.html">Hotellerie</a><a href="seiten/aussengastronomie.html">Außengastronomie</a><a href="seiten/einzelhandel.html">Einzelhandel</a><a href="seiten/friseure.html">Friseure</a><a href="seiten/branchennews.html">Branchennews</a></div></details>
+    <details><summary>Preise</summary><div><a href="seiten/preisliste.html">Hardware & Software</a><a href="seiten/digitalpaket.html">Cloud-Dienste</a></div></details>
+    <details><summary>Wissen</summary><div><a href="https://vectronhelp.zendesk.com/hc/de">Service & Support</a><a href="https://vectronhelp.zendesk.com/hc/de/categories/15596215904925-Technische-Dokumente">Technische Dokumente</a><a href="seiten/digitalportal.html">Werbemittel (Digitalportal)</a><a href="seiten/newsletter.html">Newsletter</a><a href="seiten/messen-events.html">Messen & Events</a><a href="seiten/webinare.html">Webinare</a><a href="seiten/lexikon.html">Lexikon</a><a href="seiten/fiskalische-vorgaben.html">Fiskalische Vorgaben</a><a href="seiten/e-rechnungspflicht.html">E-Rechnungspflicht</a><a href="seiten/kassenmeldepflicht-2025.html">Meldepflicht</a><a href="seiten/tse.html">TSE</a><a href="seiten/kassen-sich-v-2020.html">KassensichV</a><a href="seiten/gobd.html">GoBD</a><a href="seiten/blog.html">Blog</a></div></details>
+    <details><summary>Unternehmen</summary><div>
+      <p class="mega-h">Profil</p><a href="seiten/unternehmen.html">Unternehmen</a><a href="seiten/vorstand.html">Vorstand</a><a href="seiten/vectron-im-rueckblick.html">Vectron im Rückblick</a><a href="seiten/verschmelzung-posmatic.html">Verschmelzung Posmatic GmbH</a><a href="seiten/nachhaltigkeit.html">Nachhaltigkeit</a><a href="seiten/erfolgsgeschichten.html">Erfolgsstories</a>
+      <p class="mega-h">Investor Relations</p><a href="seiten/ir-kontakt.html">IR-Kontakt</a><a href="seiten/uebernahmeangebot.html">Übernahmeangebot</a><a href="seiten/ad-hoc-news.html">Ad-hoc-News</a><a href="seiten/investoren-news.html">Investoren-News</a><a href="seiten/kurzportraet-unternehmen.html">Kurzporträt Unternehmen</a><a href="seiten/unternehmenskalender-berichte.html">Unternehmenskalender & Berichte</a><a href="seiten/analysen.html">Analysen</a><a href="seiten/directors-dealings.html">Directors' Dealings</a><a href="seiten/corporate-governance-kodex.html">Corporate Governance Kodex</a><a href="seiten/aktienkurs.html">Aktienkurs</a>
+      <p class="mega-h">News & Presse</p><a href="seiten/pressekontakt.html">Pressekontakt</a><a href="seiten/media-datenbank.html">Media-Datenbank</a><a href="seiten/news.html">Alle News</a><a href="seiten/rss-feeds.html">RSS-Feeds</a>
+      <p class="mega-h">Karriere</p><a href="https://karriere.vectron-systems.com/de/">Stellenangebote</a><a href="https://karriere.vectron-systems.com/de/unternehmen/benefits/">Benefits</a>
+    </div></details>
+    <details><summary>Kontakt</summary><div><a href="seiten/kaufberatung.html">Kaufberatung</a><a href="seiten/dein-angebot.html">Angebotsanfrage</a><a href="seiten/vectron-haendlersuche.html">Händlersuche</a><a href="https://vectronhelp.zendesk.com/hc/de">Kundensupport</a><a href="seiten/vertriebsteam.html">Support für Händler</a><a href="seiten/pressekontakt.html">Pressekontakt</a></div></details>
+    <div class="mm-foot"><a href="https://service.vectron.de/index.php">Händler-Login</a><a href="https://www.vectron.de/de/kunden-login/login-uebersicht/">Kunden-Login</a><a href="tel:+492512856200">+49 251 2856 200</a></div>
+    <a href="seiten/dein-angebot.html" class="btn btn-primary" style="width:100%;justify-content:center">Angebot anfordern</a>
+  </div>
+</div>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-glow" id="heroGlow"></div>
+  <div class="wrap hero-copy">
+    <p class="eyebrow"><span class="dot"></span>VECTRON SMART · Kasse + Payment + Cloud + Service</p>
+    <h1 class="split">Eine Kasse.<br><span class="g">Alle Möglichkeiten.</span></h1>
+    <p class="hero-sub fade-up">Wir machen's einfach. Hochwertige Kassen zum günstigen Preis, transparentes Payment, Cloud-Dienste inklusive und persönlicher Service vor Ort.</p>
+    <div class="hero-cta fade-up">
+      <a href="seiten/dein-angebot.html" class="btn btn-primary magnetic">Angebot anfordern <span class="arr">→</span></a>
+      <a href="#smart" class="btn btn-ghost">Mehr zu VECTRON SMART</a>
+    </div>
+  </div>
+  <div class="hero-media" id="heroMedia">
+    <div class="hero-frame hero-video" id="heroFrame">
+      <video id="heroVideo" data-hero="assets/video/erklaer" playsinline preload="metadata" poster="assets/video/erklaer_poster.jpg" aria-label="Erklärvideo: ein Samstag im Café mit VECTRON SMART"></video>
+      <button class="hv-play" id="heroPlay" type="button" aria-label="Film abspielen">
+        <i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>
+        <span>Film ansehen <em>1:09</em></span>
+      </button>
+      <div class="hv-bar" aria-hidden="true"><i id="heroBar"></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOGOS ============ -->
+<section class="logos">
+  <p class="mono center">Zu unseren Kunden gehören unter anderem</p>
+  <div class="marquee"><div class="track">
+    <span>Dunkin' Donuts</span><span>Gosch Sylt</span><span>Heberer</span><span>Steigenberger</span><span>Böckeler</span><span>Stemberg</span><span>von Allwörden</span><span>Picnic</span>
+    <span>Dunkin' Donuts</span><span>Gosch Sylt</span><span>Heberer</span><span>Steigenberger</span><span>Böckeler</span><span>Stemberg</span><span>von Allwörden</span><span>Picnic</span>
+  </div></div>
+</section>
+
+<!-- ============ EXPLODE: Kasse geht beim Scrollen auseinander ============ -->
+<section class="explode" id="pos8">
+  <div class="ex-pin">
+    <div class="ex-stage" id="exStage">
+      <div class="ex-media"><video id="vExplode" data-src="assets/video/explode" data-seq="assets/seq/explode" muted playsinline preload="none" poster="assets/img/explode_start.jpg"></video><img class="ex-still" id="exStillA" src="assets/img/explode_start_2k.jpg" srcset="assets/img/explode_start_2k.jpg 2400w, assets/img/explode_start_4k.jpg 4096w" sizes="(max-width: 900px) 200vw, 300vw" alt=""><img class="ex-still" id="exStillB" src="assets/img/explode_end_2k.jpg" srcset="assets/img/explode_end_2k.jpg 2400w, assets/img/explode_end_4k.jpg 4096w" sizes="(max-width: 900px) 200vw, 300vw" alt=""></div>
+      <ul class="ex-labels">
+        <li style="--x:24%;--y:15%" class="l"><b>Entspiegeltes Glas</b><span>robust, leicht zu reinigen</span></li>
+        <li style="--x:44%;--y:34%" class="l"><b>15,6" Full HD</b><span>500 Nits, Medical Grade</span></li>
+        <li style="--x:58%;--y:47%" class="r"><b>Octa-Core-CPU</b><span>4 GB RAM · 64 GB Speicher</span></li>
+        <li style="--x:66%;--y:50%" class="r"><b>Payment & TSE</b><span>gesetzeskonform kassieren</span></li>
+        <li style="--x:74%;--y:31%" class="r"><b>Aluminium-Druckguss</b><span>passiv gekühlt, Dauerbetrieb</span></li>
+        <li style="--x:70%;--y:83%" class="r"><b>Standfuß</b><span>vorhandenes Zubehör passt weiter</span></li>
+      </ul>
+    </div>
+    <div class="ex-head">
+      <p class="eyebrow light"><span class="dot"></span>Kassensystem POS 8 · Blick hinein</p>
+      <h2 class="light">Außen ruhig.<br><span class="g2">Innen stark.</span></h2>
+    </div>
+    <div class="ex-flow" id="exFlow">
+      <p class="mono">So läuft ein Kassiervorgang</p>
+      <ol>
+        <li><i>01</i>Gast bestellt</li><li><i>02</i>Kasse bucht</li><li><i>03</i>Küche bekommt den Bon</li><li><i>04</i>Gast zahlt per Karte</li><li><i>05</i>TSE signiert</li><li><i>06</i>Cloud und DATEV</li>
+      </ol>
+      <div class="ex-track"><span class="ex-dot"></span></div>
+    </div>
+    <div class="ex-progress"><i id="exBar"></i></div>
+  </div>
+</section>
+
+<!-- ============ STATEMENT ============ -->
+<section class="statement">
+  <div class="wrap">
+    <p class="reveal-words">Kasse, Payment, Cloud und Service. Ein Partner, ein System, ein Ansprechpartner vor Ort. Wir machen's einfach.</p>
+  </div>
+</section>
+
+<!-- ============ SMART (sticky story) ============ -->
+<section class="smart" id="smart">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Alles in einem Paket</p>
+      <h2 class="split">Sei SMART,<br>sei VECTRON.</h2>
+      <p class="lead fade-up">Nur wir bieten dir das einzigartige Komplettpaket für deinen Betrieb. Freu dich auf zusätzlichen Umsatz, mehr Zeit und weniger Arbeit.</p>
+    </div>
+    <div class="story">
+      <div class="story-text">
+        <div class="step" data-step="0"><span class="num">01</span><h3>Kasse</h3><p>Hochwertige Kassensysteme zum günstigen Mietpreis. Über die gesamte Laufzeit versichert und im Schadensfall sofort ausgetauscht.</p><ul class="mini"><li>POS 8 inkl. Drucker <b>39,90 €</b></li><li>POS Life <b>24,90 €</b></li><li>POS M4 Pay mobil <b>29,90 €</b></li></ul></div>
+        <div class="step" data-step="1"><span class="num">02</span><h3>Payment</h3><p>Zwei POS Terminals inklusive MobileApp gratis. Transparente Konditionen ohne versteckte Kosten.</p><ul class="mini"><li>Kartenzahlung <b>1,29 %</b></li><li>Onlinezahlung <b>1,99 %</b></li><li>Terminal P630 oder V660p <b>0 €</b></li></ul></div>
+        <div class="step" data-step="2"><span class="num">03</span><h3>Cloud</h3><p>Ordering, Reservierung, Gutscheine, Reporting, DATEV und das Digitalpaket Standard. Alles drin, alles für 0 €.</p><ul class="mini"><li>Inhouse- und Online-Ordering</li><li>Tischreservierung und Gutscheine</li><li>bonVito Loyalty und Order Hub</li></ul></div>
+        <div class="step" data-step="3"><span class="num">04</span><h3>Service</h3><p>Ein Ansprechpartner vor Ort für alles. Über 300 Fachhändler kennen dich und deinen Betrieb genau.</p><ul class="mini"><li>Persönliche Einrichtung</li><li>Feste Ansprechpartner</li><li>Hotline Mo. bis Fr. 9 bis 17 Uhr</li></ul></div>
+      </div>
+      <div class="story-visual">
+        <div class="sv-stage">
+          <div class="sv sv0 active" style="--pos:72% center"><img src="assets/img/hero-pos.jpg" alt=""><span class="sv-label">Kasse</span></div>
+          <div class="sv sv1"><img src="assets/img/terminal.jpg" alt=""><span class="sv-label">Payment</span></div>
+          <div class="sv sv2"><img src="assets/img/qr.jpg" alt=""><span class="sv-label">Cloud</span></div>
+          <div class="sv sv3" style="--pos:40% center"><img src="assets/img/owner.jpg" alt=""><span class="sv-label">Service</span></div>
+          <div class="sv-progress"><i></i><i></i><i></i><i></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BRANCHEN TABS ============ -->
+<section class="branchen" id="branchen">
+  <div class="wrap">
+    <div class="sec-head row">
+      <div><p class="eyebrow">Individuelle Lösungen für jeden</p><h2 class="split">Wir machen<br>es passend.</h2></div>
+      <p class="lead fade-up">Vom Einzelbetrieb bis zum Filialisten: Wir realisieren eine branchenspezifische Lösung, die zu dir passt und mit dir wächst.</p>
+    </div>
+    <div class="tabs" role="tablist">
+      <button class="tab active" data-i="0">Gastronomie</button><button class="tab" data-i="1">Bäckerei & Konditorei</button><button class="tab" data-i="2">Metzgerei</button><button class="tab" data-i="3">Hotellerie</button><button class="tab" data-i="4">Außengastronomie</button><button class="tab" data-i="5">Einzelhandel</button><button class="tab" data-i="6">Friseure</button>
+    </div>
+    <div class="tab-stage fade-up">
+      <div class="tab-img"><img id="tabImg" src="assets/img/handheld.jpg" alt=""></div>
+      <div class="tab-copy">
+        <span class="mono" id="tabKicker">01 · Gastronomie</span>
+        <h3 id="tabTitle">Schneller am Gast. Mehr Umsatz pro Tisch.</h3>
+        <p id="tabText">Mobile Kassen, Inhouse-Ordering per QR-Code und der Küchenmonitor Order Hub reduzieren Laufwege und beschleunigen jeden Ablauf.</p>
+        <ul class="checks" id="tabList"><li>Mobile Bestellaufnahme</li><li>Bis zu 20 % mehr Getränkeumsatz</li><li>Order Hub für Küche und Bar</li></ul>
+        <a href="seiten/gastronomie.html" class="btn btn-dark">Lösung ansehen <span class="arr">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats" id="stats">
+  <div class="stats-glow"></div>
+  <div class="wrap">
+    <p class="eyebrow light">Qualität, die sich bewährt hat</p>
+    <h2 class="split light">Zahlen, auf die du<br>bauen kannst.</h2>
+    <div class="stat-grid">
+      <div class="stat"><strong><span data-count="35">0</span>+</strong><span>Jahre Erfahrung mit Kassensystemen und digitalen Diensten</span></div>
+      <div class="stat"><strong><span data-count="250000" data-format="de">0</span>+</strong><span>verkaufte Kassensysteme</span></div>
+      <div class="stat"><strong><span data-count="300">0</span>+</strong><span>Fachhändler kümmern sich um deinen Service vor Ort</span></div>
+      <div class="stat"><strong>~<span data-count="200">0</span></strong><span>Kolleginnen und Kollegen geben alles für deinen Erfolg</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KREISLAUF: wie Kunde, Betrieb und Vectron zusammenspielen ============ -->
+<section class="cycle" id="produktwelt">
+  <div class="cy-pin">
+    <div class="cy-stage" id="cyStage">
+      <div class="cy-zoom" id="cyZoom">
+        <video id="vCycle" data-src="assets/video/cycle" data-seq="assets/seq/cycle" muted playsinline preload="none" poster="assets/img/cycle.jpg"></video><img class="cy-still" id="cyStill" src="assets/img/cycle_2k.jpg" srcset="assets/img/cycle_2k.jpg 2400w, assets/img/cycle_4k.jpg 4096w" sizes="(max-width: 900px) 200vw, 300vw" alt="">
+      </div>
+    </div>
+    <div class="cy-veil"></div>
+    <div class="cy-intro" id="cyIntro">
+      <p class="eyebrow">Entdecke unsere Produktwelt</p>
+      <h2>Ein Kreislauf.<br><span class="g">Alles verbunden.</span></h2>
+      <p class="lead">Vom Gast über die Kasse bis zur Steuerberatung. Alle Daten fließen automatisch durch die myVectron Cloud. Scroll dich durch den Kreislauf.</p>
+    </div>
+    <div class="cy-panel" id="cyPanel">
+      <article class="cy-step" data-x="50" data-y="19"><span class="mono">01 · Kunden</span><h3>Der Gast bestellt.</h3><p>Online, per QR-Code am Tisch oder mit Reservierung. Alles landet automatisch in deiner Kasse.</p><ul><li>Online-Bestellung</li><li>Inhouse-Ordering per QR-Code</li><li>Online-Tischreservierung</li></ul></article>
+      <article class="cy-step" data-x="70" data-y="28"><span class="mono">02 · Restaurant</span><h3>Die Kasse übernimmt.</h3><p>Stationär oder mobil am Tisch. Zahlung per Karte oder Smartphone, der Bon kommt digital.</p><ul><li>Stationäre und mobile Kassen</li><li>Mobile Payment-Lösungen</li><li>Digital-Bon</li></ul></article>
+      <article class="cy-step" data-x="70" data-y="58"><span class="mono">03 · Küche</span><h3>Die Küche weiß Bescheid.</h3><p>Der Order Hub zeigt jede Bestellung strukturiert und priorisiert an der richtigen Station.</p><ul><li>Küchenmonitor Order Hub</li><li>Bar- und Snackstation</li><li>Kein Papierbon mehr</li></ul></article>
+      <article class="cy-step" data-x="50" data-y="72"><span class="mono">04 · Backoffice</span><h3>Du siehst alles. Live.</h3><p>Kennzahlen per Reporting-App von unterwegs, Echtzeit-Daten per BI-Schnittstelle, Rechnungen im Archiv.</p><ul><li>Reporting-App</li><li>BI-Schnittstelle</li><li>Rechnungsarchiv</li></ul></article>
+      <article class="cy-step" data-x="30" data-y="59"><span class="mono">05 · Warenwirtschaft</span><h3>Der Bestand bucht sich selbst.</h3><p>Schnittstellen zur Warenwirtschaft, Eventverwaltung, Finanzbuchhaltung und Personal.</p><ul><li>Software-Schnittstellen</li><li>Bestand, Planung, Kosten</li><li>Personalmanagement</li></ul></article>
+      <article class="cy-step" data-x="30" data-y="31"><span class="mono">06 · Steuerberatung</span><h3>Der Steuerberater hat's schon.</h3><p>Fiskaldaten gehen täglich gesetzeskonform ins DATEV Kassenarchiv online. Betriebsprüfung? Ein Klick.</p><ul><li>Anbindung DATEV Kassenarchiv online</li><li>Fiskalarchiv</li><li>TSE, GoBD, KassensichV</li></ul></article>
+      <article class="cy-step" data-x="50" data-y="42"><span class="mono">07 · Zurück zum Gast</span><h3>Und der Gast kommt wieder.</h3><p>Gutscheine und bonVito Loyalty schließen den Kreis. Mehr Stammgäste, mehr Umsatz. Mittendrin: dein Fachhändler vor Ort.</p><ul><li>Gutscheine</li><li>bonVito Loyalty</li><li>Persönlicher Service</li></ul></article>
+    </div>
+    <div class="cy-ring" aria-hidden="true">
+      <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" class="cy-track"/><circle cx="60" cy="60" r="50" class="cy-fill" id="cyFill"/></svg>
+      <span class="cy-count"><b id="cyNum">00</b>/07</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HARDWARE BENTO ============ -->
+<section class="hardware" id="hardware">
+  <div class="wrap">
+    <div class="sec-head row">
+      <div><p class="eyebrow">Hardware</p><h2 class="split">Gebaut für<br>den Dauerbetrieb.</h2></div>
+      <p class="lead fade-up">Industrielle Komponenten, robuste Bauweise und offlinefähig. Weil deine Kasse einfach laufen muss.</p>
+    </div>
+    <div class="bento">
+      <div class="b b-pos"><div class="b-copy"><span class="tag new">Neu</span><h3>Kassensystem POS 8</h3><p>Deine Evolution am Point of Sale. Mehr Performance, mehr Stabilität, altes Zubehör bleibt nutzbar.</p>
+        <div class="specs"><div><b>15,6"</b><span>Full HD · 500 Nits</span></div><div><b>8 Kerne</b><span>4 GB RAM · 64 GB</span></div><div><b>Alu</b><span>Druckgussgehäuse</span></div></div>
+        <a href="seiten/pos-8.html" class="btn btn-primary btn-sm">Ab 39,90 € mieten</a></div>
+        <img class="parallax" src="assets/img/hero-pos.jpg" alt=""></div>
+      <div class="b b-shift"><img src="assets/img/terminal.jpg" alt=""><div class="b-copy over"><span class="tag new">Neu</span><h3>Shift4 One</h3><p>Mobiles POS Terminal. 0 € Grundgebühr, nur 1,29 %.</p></div></div>
+      <div class="b b-widget w-dark"><div class="tile"><div class="dial"></div></div><div class="b-cap">Offlinefähig. Läuft auch ohne Internet.</div></div>
+      <div class="b b-widget w-graph"><div class="capsule"><span>Auslastung Küche</span><strong>86 %</strong><span class="ctag">Order Hub</span></div></div>
+      <div class="b b-mobile"><img src="assets/img/handheld.jpg" alt=""><div class="b-copy over"><h3>Mobile Lösungen</h3><p>Bestellen, kassieren, Bon. Mit einem Gerät am Gast.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PREISE ============ -->
+<section class="pricing" id="preise">
+  <div class="wrap">
+    <div class="sec-head center">
+      <p class="eyebrow">Transparente Preise</p>
+      <h2 class="split">Alle Cloud-Dienste.<br><span class="g">Für 0 €.</span></h2>
+      <p class="lead fade-up">Kasse mieten, Payment nutzen, Cloud geschenkt. Mit VECTRON SMART zahlst du nur, was du wirklich brauchst.</p>
+    </div>
+    <div class="price-grid">
+      <div class="pcard"><span class="mono">Stationär</span><h3>POS Life</h3><div class="price"><b>24,90 €</b><span>/ Monat</span></div><ul><li>Kompakte Kasse</li><li>Versichert über die Laufzeit</li><li>Sofort-Austausch</li></ul><a href="seiten/dein-angebot.html" class="btn btn-ghost btn-sm">Anfragen</a></div>
+      <div class="pcard featured"><span class="tag">Top</span><span class="mono">Stationär inkl. Drucker</span><h3>POS 8</h3><div class="price"><b>39,90 €</b><span>/ Monat</span></div><ul><li>15,6" Full HD, Octa-Core</li><li>Drucker inklusive</li><li>Alle Cloud-Dienste 0 €</li></ul><a href="seiten/smart.html" class="btn btn-primary btn-sm">Jetzt SMART werden</a></div>
+      <div class="pcard"><span class="mono">Mobil</span><h3>POS M4 Pay</h3><div class="price"><b>29,90 €</b><span>/ Monat</span></div><ul><li>Kassieren am Tisch</li><li>Payment integriert</li><li>Digital-Bon</li></ul><a href="seiten/dein-angebot.html" class="btn btn-ghost btn-sm">Anfragen</a></div>
+    </div>
+    <div class="cloud-list fade-up">
+      <div class="cl-head"><h3>Inklusive bei VECTRON SMART</h3><span class="mono">Einzelpreis · bei SMART</span></div>
+      <div class="cl-row"><span>Inhouse-Ordering</span><s>99 €</s><b>0 €</b></div>
+      <div class="cl-row"><span>Online-Ordering</span><s>99 €</s><b>0 €</b></div>
+      <div class="cl-row"><span>Online-Checkout</span><s>29 €</s><b>0 €</b></div>
+      <div class="cl-row"><span>Tischreservierung</span><s>29,90 €</s><b>0 €</b></div>
+      <div class="cl-row"><span>Gutschein-Modul</span><s>2 %</s><b>0 €</b></div>
+      <div class="cl-row"><span>BI-Schnittstelle</span><s>4,90 €</s><b>0 €</b></div>
+      <div class="cl-row"><span>Anbindung DATEV Kassenarchiv online</span><s>15 €</s><b>0 €</b></div>
+      <div class="cl-row"><span>Digitalpaket Standard</span><s>29,90 €</s><b>0 €</b></div>
+      <div class="cl-row"><span>bonVito Loyalty</span><s>59 €</s><b>0 €</b></div>
+      <div class="cl-row"><span>Order Hub</span><s>29,90 €</s><b>0 €</b></div>
+      <p class="fine">Payment: Kartenzahlung 1,29 % (AMEX 1,9 %), Onlinezahlung 1,99 %, monatliche Grundgebühr 34,90 €. Zwei Terminals inklusive, weitere 19,90 € monatlich.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PAYMENT ============ -->
+<section class="payments">
+  <div class="wrap">
+    <h2 class="split">Akzeptiere alle gängigen Zahlungsmittel.</h2>
+    <div class="pay-pills">
+      <span>girocard</span><span>Visa</span><span>Mastercard</span><span>Maestro</span><span>American Express</span><span>V PAY</span><span>Apple Pay</span><span>Google Pay</span><span>Kontaktlos</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICE ============ -->
+<section class="service" id="service">
+  <div class="wrap service-grid">
+    <div class="service-img"><img class="parallax" src="assets/img/owner.jpg" alt=""></div>
+    <div class="service-copy">
+      <p class="eyebrow">Persönlicher Support</p>
+      <h2 class="split">Direkt bei dir<br>vor Ort.</h2>
+      <p class="lead fade-up">Profitiere von unserem dichten Servicenetz. Die Vectron-Fachhändler übernehmen deine persönliche Betreuung. Feste Ansprechpartner kennen dich und deinen Betrieb genau.</p>
+      <form class="dealer fade-up" onsubmit="event.preventDefault()">
+        <input type="text" inputmode="numeric" placeholder="Deine Postleitzahl" aria-label="Postleitzahl">
+        <button class="btn btn-primary">Händler finden</button>
+      </form>
+      <p class="mono fade-up">Hotline +49 251 2856 150 · Mo. bis Fr. 9 bis 17 Uhr</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORIES: horizontale Scroll-Timeline ============ -->
+<section class="journey" id="stories">
+  <div class="jr-sticky">
+    <div class="jr-slider" id="jrSlider">
+      <div class="jr-img"><img src="assets/img/terrace.jpg" alt="Gäste auf einer Restaurantterrasse" draggable="false"><span class="jr-img-chip"><i></i>Über 250.000 Kassen im Einsatz</span></div>
+      <div class="jr-main">
+        <div class="jr-axis"><span class="jr-dot"></span><span class="jr-line" id="jrLine"></span><span class="jr-dot"></span></div>
+        <div class="jr-row jr-top">
+          <div class="jr-title-col"><p class="eyebrow">Erfolgsstories</p><h2 class="jr-title">Wir lassen unsere Kunden sprechen.</h2></div>
+          <div class="jr-items">
+            <article class="jr-item"><div class="jr-stem"><span class="jr-sdot"></span><span class="jr-sline"></span></div>
+              <div class="jr-txt"><span class="mono">Gastronomie · Sylt</span><h4>Gosch Sylt</h4><p>„Mit den Kassenlösungen von Vectron können wir effektiver arbeiten. So generieren wir mehr Umsatz.“</p><b>Philipp Fellmann, Geschäftsleitung</b></div></article>
+            <article class="jr-item"><div class="jr-stem"><span class="jr-sdot"></span><span class="jr-sline"></span></div>
+              <div class="jr-txt"><span class="mono">Bäckerei · über 200 Filialen</span><h4>Wiener Feinbäckerei Heberer</h4><p>„Die Einführung der Vectron Lösung war und ist für uns ein weiterer Meilenstein, um den Digitalisierungsprozess voranzutreiben.“</p><b>Sandra und Georg P. Heberer</b></div></article>
+            <article class="jr-item"><div class="jr-stem"><span class="jr-sdot"></span><span class="jr-sline"></span></div>
+              <div class="jr-txt"><span class="mono">Konditorei · 260 Online-Bestellungen im 1. Monat</span><h4>Konditorei Böckeler</h4><p>„Die Gäste verstehen und nutzen das System und es erleichtert uns die Arbeit und wir werden schneller.“</p><b>Sebastian Böckeler, Junior-Chef</b></div></article>
+            <article class="jr-item"><div class="jr-stem"><span class="jr-sdot"></span><span class="jr-sline"></span></div>
+              <div class="jr-txt"><span class="mono">Hotellerie · 60 stationäre, 20 mobile Kassen</span><h4>CPI Hotels</h4><p>„Wir sind wunschlos glücklich.“ Fünf Jahre Vectron und Protel, alle Hotels über eine einzige Zentrale gesteuert.</p><b>Maros Šivec, CPI Hotels</b></div></article>
+          </div>
+        </div>
+        <div class="jr-row jr-bottom">
+          <div class="jr-period-col"><p class="jr-period">Gastronomie · Bäckerei · Hotellerie</p><a href="seiten/erfolgsgeschichten.html" class="btn btn-dark btn-sm">Alle Erfolgsstories <span class="arr">→</span></a></div>
+          <div class="jr-items">
+            <article class="jr-item"><div class="jr-stem"><span class="jr-sline"></span><span class="jr-sdot"></span></div>
+              <div class="jr-txt"><span class="mono">Oktoberfest München</span><h4>Rund 7 Mio. Besucher</h4><p>Viele der großen Zelte auf dem größten Volksfest der Welt kassieren mit Vectron.</p></div></article>
+            <article class="jr-item"><div class="jr-stem"><span class="jr-sline"></span><span class="jr-sdot"></span></div>
+              <div class="jr-txt"><span class="mono">DACH und BeNeLux</span><h4>Marktführer</h4><p>In den Zielbranchen Bäckerei und Gastronomie, mit rund 300 Fachhandelspartnern vor Ort.</p></div></article>
+            <article class="jr-item"><div class="jr-stem"><span class="jr-sline"></span><span class="jr-sdot"></span></div>
+              <div class="jr-txt"><span class="mono">Von 1 bis 1.000</span><h4>Jede Betriebsgröße</h4><p>Von der Ein-Kassen-Installation im Restaurant bis zum Netzwerk mit 1.000 Kassen beim Filialisten.</p></div></article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEWS ============ -->
+<section class="news" id="news">
+  <div class="wrap">
+    <div class="sec-head row"><div><p class="eyebrow">Aktuelles</p><h2 class="split">News & Events.</h2></div><a href="seiten/news.html" class="btn btn-ghost btn-sm">Zu allen News</a></div>
+    <div class="news-grid">
+      <a class="ncard big" href="seiten/webinare.html"><img src="assets/img/bakery.jpg" alt=""><div><span class="mono">Webinar · 20.10.2026</span><h3>Die digitale Bäckerei</h3><p>Wie du mit dem SMART-Paket und den neuesten digitalen Funktionen deinen Betrieb zukunftssicher aufstellst. Kostenlos.</p></div></a>
+      <a class="ncard" href="seiten/suedback-tickets.html"><span class="mono">Messe · 24. bis 27.10.2026</span><h3>Besuche uns auf der Südback</h3><p>Messe Stuttgart, Halle 10, Stand D91. Termin buchen und Ticket erhalten.</p><span class="more">Zur Buchung →</span></a>
+      <a class="ncard" href="seiten/news.html"><span class="mono">Produkte · 15.09.2026</span><h3>Marktanalyse, Payment und Kasse aus einer Hand</h3><p>VECTRON SMART auf der Südback 2026: Mehr Potenzial aus jeder Filiale holen.</p><span class="more">Mehr erfahren →</span></a>
+      <a class="ncard" href="seiten/news.html"><span class="mono">Produkte · 14.07.2026</span><h3>Shift4, Global Blue und Vectron starten Shift4 One</h3><p>All-in-One für Zahlungsabwicklung und Tax-Free Shopping, europaweit ab 2026.</p><span class="more">Mehr erfahren →</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="final" id="angebot">
+  <div class="final-glow"></div>
+  <div class="wrap final-inner">
+    <p class="eyebrow light">Dein nächster Schritt</p>
+    <h2 class="split light">Bereit für das<br>nächste Level?</h2>
+    <div class="choice">
+      <a class="ch magnetic" href="seiten/dein-angebot.html"><span class="ch-ic">€</span><h3>Angebot anfordern</h3><p>Du weißt, was du brauchst? Wir erstellen ein passendes Angebot für dein Unternehmen.</p><span class="more">Angebot anfordern →</span></a>
+      <a class="ch magnetic" href="seiten/kaufberatung.html"><span class="ch-ic">✓</span><h3>Beratung buchen</h3><p>Finde heraus, welche Kassenlösung am besten zu deinem Betrieb passt.</p><span class="more">Beratung buchen →</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section class="newsletter" id="newsletter">
+  <div class="wrap nl">
+    <div><h3>Hilfreiches Wissen.</h3><p>Praktische Tipps und Tricks für deine Branche. Alle Neuigkeiten von unseren Kassenexperten.</p></div>
+    <form onsubmit="event.preventDefault()"><input type="email" placeholder="Deine E-Mail-Adresse" aria-label="E-Mail"><button class="btn btn-dark">Anmelden</button></form>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="f-top">
+      <img src="assets/logo.svg" alt="Vectron" class="f-logo">
+      <p class="f-claim">Eine Kasse.<br>Alle Möglichkeiten.</p>
+    </div>
+    <div class="f-cols">
+      <div><p class="mega-h">Produkte</p><a href="seiten/smart.html">VECTRON SMART</a><a href="seiten/shift4-one-pos-terminal.html">Shift4 One</a><a href="seiten/kartenterminals.html">Kartenterminals</a><a href="seiten/kassensysteme.html">Kassensysteme</a><a href="seiten/pos-8.html">POS 8</a><a href="seiten/kuechenmonitor.html">Küchenmonitor</a><a href="seiten/zubehoer.html">Zubehör</a><a href="seiten/software.html">Software</a><a href="seiten/digitalpaket.html">Cloud-Dienste</a><a href="seiten/schnittstellen.html">Schnittstellen</a><a href="seiten/preisliste.html">Preise</a></div>
+      <div><p class="mega-h">Branchen</p><a href="seiten/gastronomie.html">Gastronomie</a><a href="seiten/baeckerei-konditorei.html">Bäckerei & Konditorei</a><a href="seiten/metzgerei.html">Metzgerei</a><a href="seiten/hotellerie.html">Hotellerie</a><a href="seiten/aussengastronomie.html">Außengastronomie</a><a href="seiten/einzelhandel.html">Einzelhandel</a><a href="seiten/friseure.html">Friseure</a><a href="seiten/branchennews.html">Branchennews</a></div>
+      <div><p class="mega-h">Wissen</p><a href="https://vectronhelp.zendesk.com/hc/de">Service & Support</a><a href="https://vectronhelp.zendesk.com/hc/de/categories/15596215904925-Technische-Dokumente">Technische Dokumente</a><a href="seiten/digitalportal.html">Digitalportal</a><a href="seiten/messen-events.html">Messen & Events</a><a href="seiten/webinare.html">Webinare</a><a href="seiten/lexikon.html">Lexikon</a><a href="seiten/tse.html">TSE</a><a href="seiten/kassen-sich-v-2020.html">KassensichV</a><a href="seiten/gobd.html">GoBD</a><a href="seiten/e-rechnungspflicht.html">E-Rechnungspflicht</a><a href="seiten/blog.html">Blog</a></div>
+      <div><p class="mega-h">Unternehmen</p><a href="seiten/unternehmen.html">Unternehmensprofil</a><a href="seiten/vorstand.html">Vorstand</a><a href="seiten/nachhaltigkeit.html">Nachhaltigkeit</a><a href="seiten/erfolgsgeschichten.html">Erfolgsstories</a><a href="seiten/kurzportraet-unternehmen.html">Investor Relations</a><a href="seiten/news.html">News & Presse</a><a href="https://karriere.vectron-systems.com/de/">Karriere</a></div>
+      <div><p class="mega-h">Kontakt</p><p class="addr">Vectron Systems AG<br>Willy-Brandt-Weg 41<br>48155 Münster</p><a href="tel:+492512856200">+49 251 2856 200</a><a href="mailto:info@vectron.de">info@vectron.de</a><a href="seiten/vectron-haendlersuche.html">Händlersuche</a></div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 Vectron Systems AG</span>
+      <span class="f-legal"><a href="seiten/datenschutz.html">Datenschutz</a><a href="seiten/impressum.html">Impressum</a><a href="https://www.vectron.de/de/myvectronlegal/">AGB</a><a href="seiten/datenschutz.html">Cookies</a></span>
+      <span class="f-social"><a href="https://www.instagram.com/vectronbyshift4/">Instagram</a><a href="https://www.facebook.com/vectronbyshift4/">Facebook</a><a href="https://www.linkedin.com/company/vectron-systems-ag/">LinkedIn</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="assets/main.js?v=20261015140307"></script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vectron CI Guide 2.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#008C5A; --emerald:#005C3C; --forest:#06261B; --mint:#55B49B; --mist:#BFE3D5;
+  --ink:#0E1412; --graphite:#3C3C3B; --slate:#6B706D; --stone:#E6E3DC; --paper:#F4F3EF; --white:#fff;
+  --glow:radial-gradient(60% 60% at 50% 50%, #3FE0A0 0%, #00A86B 35%, rgba(0,140,90,0) 75%);
+  --r-xl:36px; --r-l:24px; --r-m:16px;
+  --display:"Inter Tight",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--display);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--slate)}
+nav.toc{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(244,243,239,.75);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,.06)}
+nav.toc .wrap{display:flex;gap:24px;align-items:center;height:60px;overflow-x:auto;white-space:nowrap}
+nav.toc img{height:20px;margin-right:12px}
+nav.toc a{font-size:13px;text-decoration:none;color:var(--slate)}
+nav.toc a:hover{color:var(--green)}
+section{padding:120px 0;border-bottom:1px solid rgba(0,0,0,.06)}
+h1{font-size:clamp(56px,9vw,140px);font-weight:700;letter-spacing:-.05em;line-height:.9}
+h2{font-size:clamp(40px,5vw,72px);font-weight:600;letter-spacing:-.04em;line-height:1;margin:14px 0 24px}
+h3{font-size:22px;font-weight:600;letter-spacing:-.02em;margin-bottom:8px}
+p.lead{font-size:20px;color:var(--graphite);max-width:680px}
+.grid{display:grid;gap:20px}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.g2,.g3,.g4{grid-template-columns:minmax(0,1fr)}.wrap{padding:0 16px}section{padding:80px 0}nav.toc .wrap{gap:20px;scrollbar-width:none}nav.toc .wrap::-webkit-scrollbar{display:none}nav.toc a{display:inline-flex;align-items:center;min-height:44px;font-size:14px}h1{margin-top:12px}}
+.card{background:var(--white);border-radius:var(--r-xl);padding:32px;position:relative;overflow:hidden}
+/* Cover */
+.cover{min-height:100vh;display:flex;align-items:flex-end;padding:140px 0 80px;background:linear-gradient(180deg,#C9CDCB 0%,#2B3A35 45%,#0B110F 100%);color:#fff;border:0;position:relative;overflow:hidden}
+.cover::after{content:"";position:absolute;width:900px;height:900px;right:-200px;top:-150px;background:var(--glow);filter:blur(30px);opacity:.75}
+.cover .wrap{position:relative;z-index:2;width:100%}
+.cover .mono{color:rgba(255,255,255,.6)}
+.cover p{font-size:22px;max-width:560px;color:rgba(255,255,255,.75);margin-top:28px}
+.cover .meta{display:flex;gap:40px;margin-top:64px;flex-wrap:wrap}
+/* Brand core */
+.pill{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:var(--stone);font-size:14px;font-weight:500}
+.pill.dark{background:var(--ink);color:#fff}.pill.green{background:var(--green);color:#fff}
+.values .card h3{font-size:28px}
+/* Logo */
+.logo-stage{height:300px;display:grid;place-items:center;border-radius:var(--r-xl);position:relative}
+.logo-stage img{width:58%;max-width:340px}
+.logo-stage .mono{position:absolute;left:24px;bottom:20px}
+.l-light{background:var(--white)}.l-dark{background:var(--ink)}.l-green{background:var(--green)}.l-grad{background:linear-gradient(160deg,#BFC4C2,#26332F 60%,#0B110F)}
+.clear{border:1px dashed var(--mint);padding:28px;border-radius:12px;position:relative}
+.clear::before{content:"x";position:absolute;top:4px;left:8px;font-family:var(--mono);font-size:11px;color:var(--mint)}
+/* Colors */
+.sw{border-radius:var(--r-l);overflow:hidden;background:var(--white)}
+.sw .chip{height:160px;display:flex;align-items:flex-end;padding:16px;color:#fff;font-weight:600}
+.sw .info{padding:16px;font-family:var(--mono);font-size:12px;color:var(--slate);line-height:1.8}
+.sw .info b{font-family:var(--display);font-size:16px;color:var(--ink);display:block;letter-spacing:-.01em}
+.ratio{display:flex;height:64px;border-radius:999px;overflow:hidden;margin-top:32px}
+.ratio div{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:11px;color:#fff}
+/* Gradients */
+.grad{height:320px;border-radius:var(--r-xl);position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:24px;color:#fff}
+.grad .mono{color:rgba(255,255,255,.8)}
+.gr1{background:linear-gradient(180deg,#C9CDCB 0%,#2B3A35 50%,#0B110F 100%)}
+.gr2{background:var(--paper)}.gr2::before{content:"";position:absolute;inset:15% 20%;background:var(--glow);filter:blur(10px)}
+.gr2 .mono{color:var(--graphite);position:relative}
+.gr3{background:radial-gradient(80% 80% at 20% 100%,#00A86B 0%,#005C3C 40%,#06261B 80%)}
+.gr4{background:linear-gradient(180deg,#E6E3DC 0%,#BFE3D5 60%,#55B49B 100%)}.gr4 .mono{color:var(--forest)}
+/* Type */
+.type-row{display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:baseline;padding:28px 0;border-top:1px solid rgba(0,0,0,.08)}
+@media(max-width:900px){.type-row{grid-template-columns:minmax(0,1fr)}}
+/* Components */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:999px;font-weight:600;font-size:16px;border:0;cursor:pointer;text-decoration:none;transition:transform .3s cubic-bezier(.2,.8,.2,1),background .3s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--green);color:#fff}.btn-primary:hover{background:var(--emerald)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-ghost{background:transparent;border:1.5px solid var(--ink);color:var(--ink)}
+.btn .arr{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.2);display:grid;place-items:center}
+.widgets{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.widgets{grid-template-columns:minmax(0,1fr)}}
+.wbox{height:380px;border-radius:var(--r-xl);display:grid;place-items:center;position:relative;overflow:hidden}
+.w-dark{background:linear-gradient(180deg,#C9CDCB,#2B3A35 55%,#0B110F)}
+.w-light{background:#EFEFEC}.w-stone{background:var(--stone)}.w-graph{background:#3D3F3E}
+.tile{background:#000;border-radius:36px;width:220px;height:220px;display:grid;place-items:center;position:relative}
+.dial{width:150px;height:150px;border-radius:50%;background:radial-gradient(circle,#E9F5EF 0%,#6FD6A9 55%,#008C5A 100%);position:relative}
+.dial::before,.dial::after{content:"";position:absolute;left:50%;top:50%;height:3px;background:#0B110F;border-radius:3px;transform-origin:0 50%}
+.dial::before{width:60px;transform:rotate(-180deg)}.dial::after{width:52px;background:#fff;transform:rotate(130deg)}
+.chart{background:#fff;border-radius:28px;padding:22px;width:260px}
+.chart .bars{display:flex;gap:10px;align-items:flex-end;height:110px;margin-top:10px}
+.chart .bars i{flex:1;border-radius:99px;background:linear-gradient(180deg,#00A86B,#BFE3D5);display:block}
+.chart .bars i:nth-child(odd){background:#E6E6E3}
+.pay{background:#000;border-radius:120px;width:300px;height:190px;display:grid;place-items:center}
+.cardv{width:170px;height:104px;border-radius:16px;background:linear-gradient(135deg,#00A86B,#005C3C);padding:14px;color:#fff;font-size:11px;display:flex;flex-direction:column;justify-content:space-between}
+.capsule{width:200px;height:300px;border-radius:120px;background:radial-gradient(60% 50% at 50% 50%,#2FE09A,#008C5A 45%,#E6E3DC 85%);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:26px 0;color:#fff;font-size:12px}
+.capsule .tag{background:rgba(0,0,0,.25);padding:6px 14px;border-radius:99px}
+.glass{background:rgba(255,255,255,.55);backdrop-filter:blur(14px);border-radius:28px;padding:22px;width:260px;color:var(--ink)}
+.glass .big{font-size:44px;font-weight:600;letter-spacing:-.04em}
+.photo{border-radius:var(--r-xl);overflow:hidden;aspect-ratio:4/5;background:var(--stone)}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo.wide{aspect-ratio:16/9}
+.dos .card{padding:24px}.dos .ok{color:var(--green);font-weight:600}.dos .no{color:#B4372E;font-weight:600}
+.motion-demo{height:140px;border-radius:var(--r-l);background:var(--white);position:relative;overflow:hidden}
+.motion-demo i{position:absolute;left:24px;top:50%;width:44px;height:44px;margin-top:-22px;border-radius:14px;background:var(--green);animation:slide 2.4s cubic-bezier(.2,.8,.2,1) infinite alternate}
+@keyframes slide{to{left:calc(100% - 68px)}}
+.motion-demo.b i{animation:fadeup 2.4s cubic-bezier(.2,.8,.2,1) infinite;left:50%;margin-left:-22px;border-radius:50%}
+@keyframes fadeup{0%{opacity:0;transform:translateY(40px) scale(.9)}40%,100%{opacity:1;transform:none}}
+.motion-demo.c i{animation:pulse 2.4s ease-in-out infinite;left:50%;margin-left:-22px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 0 rgba(0,140,90,.5)}
+@keyframes pulse{50%{box-shadow:0 0 0 30px rgba(0,140,90,0)}}
+footer{padding:60px 0;font-size:14px;color:var(--slate)}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}*{animation:none!important}}
+</style>
+</head>
+<body>
+<nav class="toc"><div class="wrap">
+  <img src="../website/assets/logo-green.svg" alt="Vectron">
+  <a href="#kern">Markenkern</a><a href="#logo">Logo</a><a href="#farben">Farben</a><a href="#verlaeufe">Verläufe</a><a href="#typo">Typografie</a><a href="#ui">UI-Bausteine</a><a href="#bild">Bildsprache</a><a href="#motion">Motion</a><a href="#ton">Tonalität</a><a href="#regeln">Do & Don't</a>
+</div></nav>
+
+<header class="cover"><div class="wrap">
+  <div class="mono">Corporate Identity Guide · Version 2.0 · Oktober 2026</div>
+  <h1>Vectron.<br>Neu gedacht.</h1>
+  <p>Die Weiterentwicklung der Marke Vectron: gleiche DNA, gleiches Grün, aber ruhiger, wärmer und digitaler. Für Website, App, Messe und Social.</p>
+  <div class="meta">
+    <div><div class="mono">Primärfarbe</div><div style="font-size:20px;font-weight:600">#008C5A Vectron Green</div></div>
+    <div><div class="mono">Schrift</div><div style="font-size:20px;font-weight:600">Inter Tight + JetBrains Mono</div></div>
+    <div><div class="mono">Prinzip</div><div style="font-size:20px;font-weight:600">Weich. Klar. Lebendig.</div></div>
+  </div>
+</div></header>
+
+<section id="kern"><div class="wrap">
+  <div class="mono">01 · Markenkern</div>
+  <h2 class="reveal">Eine Kasse.<br>Alle Möglichkeiten.</h2>
+  <p class="lead reveal">Vectron steht seit über 35 Jahren für Kassen, die einfach laufen. Die neue CI übersetzt diese Verlässlichkeit in eine moderne, digitale Sprache: weniger Linien und Kästen, mehr Raum, weiche Flächen und Licht.</p>
+  <div class="grid g3 values" style="margin-top:56px">
+    <div class="card reveal"><span class="pill green">Einfach</span><h3 style="margin-top:20px">Wir machen's einfach.</h3><p>Ein Paket, ein Ansprechpartner. Die Gestaltung reduziert genauso konsequent wie das Produkt.</p></div>
+    <div class="card reveal"><span class="pill dark">Verlässlich</span><h3 style="margin-top:20px">Läuft. Auch offline.</h3><p>Ruhige Flächen, klare Hierarchie, präzise Zahlen. Vertrauen entsteht durch Klarheit.</p></div>
+    <div class="card reveal"><span class="pill">Nah</span><h3 style="margin-top:20px">Service vor Ort.</h3><p>Echte Menschen, echte Betriebe. Bildsprache mit Wärme statt Stock-Lächeln.</p></div>
+  </div>
+</div></section>
+
+<section id="logo"><div class="wrap">
+  <div class="mono">02 · Logo</div>
+  <h2 class="reveal">Das Logo bleibt.<br>Die Bühne wird neu.</h2>
+  <p class="lead reveal">Die Wortmarke "VECTRON by Shift4" wird nicht verändert. Neu ist, wie sie steht: auf ruhigen Flächen, mit viel Luft und auf Verläufen.</p>
+  <div class="grid g2" style="margin-top:56px">
+    <div class="logo-stage l-light reveal"><img src="../website/assets/logo-green.svg" alt=""><span class="mono">Standard · auf Weiß / Paper</span></div>
+    <div class="logo-stage l-dark reveal"><img src="../website/assets/logo.svg" alt=""><span class="mono" style="color:#999">Negativ · auf Ink</span></div>
+    <div class="logo-stage l-green reveal"><img src="../website/assets/logo.svg" alt=""><span class="mono" style="color:rgba(255,255,255,.7)">Negativ · auf Vectron Green</span></div>
+    <div class="logo-stage l-grad reveal"><img src="../website/assets/logo.svg" alt=""><span class="mono" style="color:rgba(255,255,255,.7)">Negativ · auf Verlauf Dusk</span></div>
+  </div>
+  <div class="grid g3" style="margin-top:20px">
+    <div class="card reveal"><h3>Schutzzone</h3><p>Rundum mindestens die Höhe des Buchstabens "V" (x) frei lassen.</p><div class="clear" style="margin-top:20px;display:inline-block"><img src="../website/assets/logo-green.svg" style="height:34px;display:block" alt=""></div></div>
+    <div class="card reveal"><h3>Mindestgröße</h3><p>Digital 96 px Breite, Print 25 mm. Darunter nur die Wortmarke ohne "by Shift4".</p></div>
+    <div class="card reveal"><h3>Position</h3><p>Web: oben links. Print und Social: unten links oder zentriert mit großzügigem Rand.</p></div>
+  </div>
+</div></section>
+
+<section id="farben"><div class="wrap">
+  <div class="mono">03 · Farben</div>
+  <h2 class="reveal">Das Grün bleibt Held.<br>Drumherum wird es warm.</h2>
+  <p class="lead reveal">Das bekannte Vectron Green bleibt unverändert. Das kalte Blaugrau (#263238) wird durch ein grünstichiges Ink ersetzt, dazu kommen warme Stein- und Papiertöne aus der neuen Bildwelt.</p>
+  <div class="mono" style="margin:56px 0 16px">Primär</div>
+  <div class="grid g4">
+    <div class="sw reveal"><div class="chip" style="background:#008C5A">Vectron Green</div><div class="info"><b>#008C5A</b>RGB 0 140 90<br>CTA, Logo, Akzente</div></div>
+    <div class="sw reveal"><div class="chip" style="background:#005C3C">Emerald</div><div class="info"><b>#005C3C</b>RGB 0 92 60<br>Hover, Tiefen</div></div>
+    <div class="sw reveal"><div class="chip" style="background:#06261B">Forest</div><div class="info"><b>#06261B</b>RGB 6 38 27<br>Dunkle Sektionen</div></div>
+    <div class="sw reveal"><div class="chip" style="background:#0E1412">Ink</div><div class="info"><b>#0E1412</b>RGB 14 20 18<br>Text, Kontrast</div></div>
+  </div>
+  <div class="mono" style="margin:40px 0 16px">Sekundär und Neutrale</div>
+  <div class="grid g4">
+    <div class="sw reveal"><div class="chip" style="background:#55B49B">Mint</div><div class="info"><b>#55B49B</b>Bisheriges Hellgrün<br>Icons, Charts</div></div>
+    <div class="sw reveal"><div class="chip" style="background:#BFE3D5;color:#06261B">Mist</div><div class="info"><b>#BFE3D5</b>NEU<br>Flächen, Badges</div></div>
+    <div class="sw reveal"><div class="chip" style="background:#E6E3DC;color:#0E1412">Stone</div><div class="info"><b>#E6E3DC</b>NEU<br>Karten, Sektionen</div></div>
+    <div class="sw reveal"><div class="chip" style="background:#F4F3EF;color:#0E1412;border-bottom:1px solid #eee">Paper</div><div class="info"><b>#F4F3EF</b>NEU<br>Seitenhintergrund</div></div>
+  </div>
+  <div class="mono" style="margin:40px 0 0">Mengenverhältnis</div>
+  <div class="ratio reveal"><div style="flex:45;background:#F4F3EF;color:#666">Paper 45 %</div><div style="flex:20;background:#E6E3DC;color:#666">Stone 20 %</div><div style="flex:18;background:#0E1412">Ink 18 %</div><div style="flex:12;background:#008C5A">Green 12 %</div><div style="flex:5;background:#55B49B">5</div></div>
+</div></section>
+
+<section id="verlaeufe"><div class="wrap">
+  <div class="mono">04 · Verläufe und Glow</div>
+  <h2 class="reveal">Licht statt Linien.</h2>
+  <p class="lead reveal">Das neue Markenelement ist der <b>Green Glow</b>: ein weicher, radialer Lichtpunkt in Vectron Green. Er ersetzt harte Rahmen, Schatten und Icons als Blickfang. Dazu der vertikale Verlauf <b>Dusk</b> von Steingrau zu Ink.</p>
+  <div class="grid g2" style="margin-top:56px">
+    <div class="grad gr1 reveal"><div><div class="mono">Dusk</div>#C9CDCB → #2B3A35 → #0B110F</div></div>
+    <div class="grad gr2 reveal"><div class="mono">Green Glow auf Paper · radial #3FE0A0 → #00A86B → transparent</div></div>
+    <div class="grad gr3 reveal"><div><div class="mono">Deep Forest</div>radial #00A86B → #005C3C → #06261B</div></div>
+    <div class="grad gr4 reveal"><div class="mono">Morning · #E6E3DC → #BFE3D5 → #55B49B</div></div>
+  </div>
+</div></section>
+
+<section id="typo"><div class="wrap">
+  <div class="mono">05 · Typografie</div>
+  <h2 class="reveal">Groß, eng, selbstbewusst.</h2>
+  <p class="lead reveal">Fira Sans wird abgelöst. <b>Inter Tight</b> trägt Headlines und Fließtext: enger Laufweite, große Grade, wenig Gewicht im Text. <b>JetBrains Mono</b> setzt Labels, Zahlen und Daten. Das gibt den digitalen Charakter aus Naders Vorlagen.</p>
+  <div style="margin-top:56px">
+    <div class="type-row reveal"><div class="mono">Display · 120/0.9 · 700 · -5 %</div><div style="font-size:clamp(48px,8vw,120px);font-weight:700;letter-spacing:-.05em;line-height:.9">Kasse. Neu.</div></div>
+    <div class="type-row reveal"><div class="mono">H1 · 72/1 · 600 · -4 %</div><div style="font-size:clamp(36px,5vw,72px);font-weight:600;letter-spacing:-.04em;line-height:1">Wir machen's einfach.</div></div>
+    <div class="type-row reveal"><div class="mono">H2 · 40/1.1 · 600 · -3 %</div><div style="font-size:40px;font-weight:600;letter-spacing:-.03em;line-height:1.1">Alles in einem Paket.</div></div>
+    <div class="type-row reveal"><div class="mono">Body · 18/1.55 · 400</div><div style="font-size:18px;max-width:620px;color:var(--graphite)">Hochwertige Kassen zum günstigen Preis, transparentes Payment, umfangreiche Cloud-Dienste und der beste Service vor Ort.</div></div>
+    <div class="type-row reveal"><div class="mono">Label · Mono 12 · Caps</div><div class="mono" style="color:var(--green);font-size:14px">Umsatz heute · +12,4 % · 14:32 Uhr</div></div>
+  </div>
+</div></section>
+
+<section id="ui"><div class="wrap">
+  <div class="mono">06 · UI-Bausteine</div>
+  <h2 class="reveal">Weiche Karten.<br>Echte Daten.</h2>
+  <p class="lead reveal">Abgerundete Flächen (Radius 24 bis 36 px), Pillen-Buttons, Widgets wie auf einem Gerät. Die Bausteine zeigen Kasse, Payment und Reporting so, wie sie wirklich aussehen könnten.</p>
+  <div style="display:flex;gap:16px;flex-wrap:wrap;margin:48px 0">
+    <a class="btn btn-primary" href="#">Angebot anfordern <span class="arr">→</span></a>
+    <a class="btn btn-dark" href="#">Händler finden</a>
+    <a class="btn btn-ghost" href="#">Mehr erfahren</a>
+    <span class="pill green">Neu</span><span class="pill">Top</span><span class="pill dark">POS 8</span>
+  </div>
+  <div class="grid widgets">
+    <div class="wbox w-dark reveal"><div class="tile"><div class="dial"></div></div></div>
+    <div class="wbox w-light reveal"><div class="chart"><div class="mono">Reporting · Woche</div><div style="font-weight:600;font-size:15px">Umsatz je Tag</div><div class="bars"><i style="height:30%"></i><i style="height:70%"></i><i style="height:45%"></i><i style="height:85%"></i><i style="height:40%"></i><i style="height:95%"></i><i style="height:60%"></i></div><div style="font-size:26px;font-weight:600;margin-top:10px">+18 %</div></div></div>
+    <div class="wbox w-stone reveal"><div class="pay"><div class="cardv"><span style="text-align:right;font-weight:700">girocard</span><span>Zahlung · 24,90 €<br>**** 5507</span></div></div></div>
+    <div class="wbox w-graph reveal"><div class="capsule"><span>Auslastung Küche</span><span style="font-size:42px;font-weight:600">86 %</span><span class="tag">Hoch</span></div></div>
+    <div class="wbox w-dark reveal"><div class="glass"><div class="mono">Order Hub</div><div class="big">12</div><div>offene Bestellungen</div><div style="display:flex;gap:6px;margin-top:14px"><span class="pill green" style="font-size:12px;padding:5px 10px">Tisch 4</span><span class="pill" style="font-size:12px;padding:5px 10px">Tisch 9</span></div></div></div>
+    <div class="wbox w-light reveal"><div class="chart" style="background:#9A9C9B;color:#fff;text-align:center"><div class="mono" style="color:rgba(255,255,255,.7)">Kundenbindung</div><div style="font-size:24px;font-family:var(--mono);margin:30px 0">Hallo, Annie</div><div style="font-size:13px">bonVito · 8 von 10 Stempeln</div></div></div>
+  </div>
+</div></section>
+
+<section id="bild"><div class="wrap">
+  <div class="mono">07 · Bildsprache</div>
+  <h2 class="reveal">Echte Betriebe.<br>Warmes Licht.</h2>
+  <p class="lead reveal">Editoriale Fotografie mit natürlichem Seitenlicht, gedeckten Erdtönen und viel Raum. Geräte sind Teil der Szene, nicht freigestellte Werbung. Produkte allein: auf Stone oder Dusk mit Green Glow.</p>
+  <div class="grid g3" style="margin-top:56px">
+    <div class="photo reveal"><img src="../website/assets/img/bakery.jpg" alt="Bäckerei"></div>
+    <div class="photo reveal"><img src="../website/assets/img/handheld.jpg" alt="Mobile Kasse"></div>
+    <div class="photo reveal"><img src="../website/assets/img/kitchen.jpg" alt="Küchenmonitor"></div>
+  </div>
+  <div class="grid g2" style="margin-top:20px">
+    <div class="photo wide reveal"><img src="../website/assets/img/hero-pos.jpg" alt="Kasse"></div>
+    <div class="photo wide reveal"><img src="../website/assets/img/owner.jpg" alt="Reporting"></div>
+  </div>
+</div></section>
+
+<section id="motion"><div class="wrap">
+  <div class="mono">08 · Motion</div>
+  <h2 class="reveal">Alles bewegt sich.<br>Nichts zappelt.</h2>
+  <p class="lead reveal">Eine Kurve für alles: <span class="mono" style="color:var(--green)">cubic-bezier(.2,.8,.2,1)</span>. Dauer 0,6 bis 1,2 s. Inhalte kommen beim Scrollen von unten, Bilder öffnen sich mit Masken, Zahlen zählen hoch, Produkte werden gepinnt.</p>
+  <div class="grid g3" style="margin-top:56px">
+    <div><div class="motion-demo reveal"><i></i></div><h3 style="margin-top:16px">Gleiten</h3><p>Weiches Abbremsen, nie linear.</p></div>
+    <div><div class="motion-demo b reveal"><i></i></div><h3 style="margin-top:16px">Auftauchen</h3><p>40 px von unten, Deckkraft 0 auf 1, gestaffelt um 0,08 s.</p></div>
+    <div><div class="motion-demo c reveal"><i></i></div><h3 style="margin-top:16px">Atmen</h3><p>Glow und Status-Punkte pulsieren langsam.</p></div>
+  </div>
+</div></section>
+
+<section id="ton"><div class="wrap">
+  <div class="mono">09 · Tonalität</div>
+  <h2 class="reveal">Per Du. Kurz. Konkret.</h2>
+  <div class="grid g2" style="margin-top:40px">
+    <div class="card reveal"><h3>So klingen wir</h3><p>"Wir machen's einfach."<br>"Mehr Umsatz, mehr Zeit, weniger Arbeit."<br>"Ein Ansprechpartner für alles."</p></div>
+    <div class="card reveal"><h3>Regeln</h3><p>Headlines maximal 6 Wörter. Ein Gedanke pro Satz. Zahlen als Ziffern. Nutzen vor Technik: erst "schneller kassieren", dann "Octa-Core-CPU".</p></div>
+  </div>
+</div></section>
+
+<section id="regeln" style="border:0"><div class="wrap">
+  <div class="mono">10 · Do & Don't</div>
+  <h2 class="reveal">Kurz gesagt.</h2>
+  <div class="grid g2 dos" style="margin-top:40px">
+    <div class="card reveal"><p class="ok">Do</p><p>Viel Weißraum, große Headlines, Grün sparsam als Signal. Glow statt Schatten. Runde Ecken. Echte Fotos aus Betrieben.</p></div>
+    <div class="card reveal"><p class="no">Don't</p><p>Logo verändern oder einfärben. Grün als Vollfläche überall. Harte Rahmen, Stock-Icons, Clipart. Blaugrau #263238 aus der alten CI.</p></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">Vectron CI Guide 2.0 · Entwurf von Shuto Crew für Vectron Systems AG · Oktober 2026</div></footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4)*0.08+'s';io.observe(el)});
+</script>
+</body>
+</html>
